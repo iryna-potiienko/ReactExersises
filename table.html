@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="root"></div>
+<script type="application/javascript">
+    const th1 = React.createElement('th',null,'Student Name');
+    const th2 = React.createElement('th',null,'Marks');
+    const tr1=React.createElement('tr',null,th1,th2);
+    const td11=React.createElement('td',null,'James');
+    const td12=React.createElement('td',null,"78");
+    const tr2=React.createElement('tr',null,td11,td12);
+    const td21=React.createElement('td',null,'Kishan');
+    const td22=React.createElement('td',null,'88');
+    const tr3=React.createElement('tr',null,td21,td22);
+
+    const thead=React.createElement('thead',null,tr1);
+    const tbody=React.createElement('tbody',null,tr2,tr3);
+    const table=React.createElement('table', {border:"1"},thead,tbody);
+
+
+    const table2 = React.createElement('table',{border:"1"},
+        React.createElement('thead',null,
+            React.createElement('tr',null,
+                React.createElement('th',null,'Student Name'),
+                React.createElement('th',null, 'Marks'))),
+        React.createElement('tbody',null,
+            React.createElement('tr',null,
+                React.createElement('td',null,'James'),
+                React.createElement('td',null,'786')),
+            React.createElement('tr',null,
+                React.createElement('td',null,'Kishan'),
+                React.createElement('td',null,'88')))
+    );
+
+    ReactDOM.render(table2,document.getElementById("root"));
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+<body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="root"></div>
+<script type="application/javascript">
+    function tick(){
+        const element = React.createElement("div",null,
+                            React.createElement("h1",null,"Hello everybody!"),
+                            React.createElement("h2",null,"Current time is: ", new Date().toLocaleTimeString(), ".")
+        );
+        ReactDOM.render(element,document.getElementById("root"));
+    }
+    setInterval(tick, 1000);
+</script>
+</body>
+</html>
