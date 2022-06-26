@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React conditional rendering</title>
+</head>
+<body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="root"></div>
+
+<script type="application/javascript">
+    function Greeting(props){
+        return React.createElement("div",null,
+        "The user is ",
+            React.createElement("b", null, props.IsLoggedIn ? "currently" : "not", " "),
+            " logged in!"
+        );
+    }
+
+    const element = React.createElement(Greeting, {IsLoggedIn: false});
+    ReactDOM.render(element,document.getElementById("root"));
+</script>
+
+</body>
+</html>

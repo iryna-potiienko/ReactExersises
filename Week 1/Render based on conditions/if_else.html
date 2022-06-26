@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>React conditional rendering</title>
+</head>
+<body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="root"></div>
+
+<script type="application/javascript">
+    function UserGreeting(props){
+        return React.createElement("h1",null,"Welcome back!");
+    }
+    function GuestGreeting(props){
+        return React.createElement("h1",null,"Please sign up!")
+    }
+
+    function Greetings(props){
+        const isLoggedIn = props.IsLoggedIn;
+        if(isLoggedIn){
+            return React.createElement(UserGreeting);
+        }
+        return React.createElement(GuestGreeting);
+    }
+
+    const element = React.createElement(Greetings, {IsLoggedIn:false});
+    ReactDOM.render(element,document.getElementById("root"));
+</script>
+</body>
+</html>

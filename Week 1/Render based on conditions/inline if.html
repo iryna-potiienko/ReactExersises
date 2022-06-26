@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Render React</title>
+</head>
+<body>
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<div id="root"></div>
+
+<script type="application/javascript">
+    function Result(props){
+        const marks = props.marks;
+        const calc = arr => arr.reduce((a,b) => a+b,0)/ arr.length;
+        const avg = calc(marks);
+
+        return React.createElement("div", null,
+            !isNaN(avg) && React.createElement("h3", null,
+                "Student got ", avg < 35 ? "failed" : avg > 75 ? "Grade A" : "Grade B", " "
+            )
+        )
+    }
+
+    //const marks = ["a", "b"]
+    const marks = [45, 77, 89, 100];
+    const element = React.createElement(Result, {marks: marks});
+    ReactDOM.render(element,document.getElementById("root"));
+</script>
+</body>
+</html>
